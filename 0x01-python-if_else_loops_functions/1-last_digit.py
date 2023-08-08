@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-if number >= 0:
+if number < 0 and (number % 10 != 0):
     last_digit = number % 10
-elif number < 0:
+else:
     last_digit = -1 * (number % 10)
 if last_digit > 5:
     str = "and is greater than 5"
