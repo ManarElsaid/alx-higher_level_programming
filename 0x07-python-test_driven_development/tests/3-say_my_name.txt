@@ -1,0 +1,26 @@
+=============================
+How to use 3-say_my_name.py
+=============================
+
+import ``say_my_name`` from ``3-say_my_name``
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+first name only:
+>>> say_my_name("Manar")
+My name is Manar 
+
+both names are strings:
+>>> say_my_name("Manar", "Elsaid")
+My name is Manar Elsaid
+
+first name is integer:
+>>> say_my_name(5, "Elsaid")
+Traceback (most recent call last):
+        ...
+TypeError: first_name must be a string
+
+seconed name is a list:
+>>> say_my_name("Manar", ["Elsaid", "Khalil"])
+Traceback (most recent call last):
+        ...
+TypeError: last_name must be a string
