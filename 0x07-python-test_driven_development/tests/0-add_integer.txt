@@ -1,0 +1,50 @@
+
+=================================
+How to use 0-add_integer.py
+=================================
+import ``add_integer`` from ``0-add_integer``
+>>> add_integer = __import__('0-add_integer').add_integer
+
+both are integers:
+>>> add_integer(1, 2)
+3
+
+one of them is negative:
+>>> add_integer(100, -2)
+98
+
+only one argument:
+>>> add_integer(2)
+100
+
+one of them is float:
+>>> add_integer(100.3, -2)
+98
+
+no argument entered:
+>>> add_integer(None)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+one of them is string:
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+one of them is a list:
+>>> add_integer([5, 3, 2], 4)
+Traceback (most recent call last):
+        ...
+TypeError: a must be an integer
+
+one of them is a tuple:
+>>> add_integer(5, (6, 2))
+Traceback (most recent call last):
+        ...
+TypeError: b must be an integer
+
+both are negative:
+>>> add_integer(-9, -1)
+-10
