@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """
-this module defines a class that inherit from 
+this module defines a class that inherit from
 the list module
 """
-
 
 
 class MyList(list):
