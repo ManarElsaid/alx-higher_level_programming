@@ -2,6 +2,6 @@
 """the module defines an empty class"""
 
 
-class BaseGeometry():
+class BaseGeometry:
     """defines an empty class"""
     pass
