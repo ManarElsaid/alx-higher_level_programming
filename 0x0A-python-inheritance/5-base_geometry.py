@@ -1,7 +1,7 @@
-#!usr/bin/python3
-"""the module defines an empty class"""
+#!/usr/bin/python3
+"""An empty class"""
 
 
 class BaseGeometry:
-    """defines an empty class"""
+    """This is an empty class"""
     pass
