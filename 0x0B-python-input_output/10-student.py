@@ -21,4 +21,4 @@ class Student:
         if (isinstance(attrs, str)):
             for atr in attrs:
                 return (attr[atr])
-        return (attrs)
+        return (attr)
