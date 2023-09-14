@@ -2,7 +2,6 @@
 """
 a module contains class studen
 """
-import json
 
 
 class Student:
@@ -18,7 +17,8 @@ class Student:
         a method retrieves a dictionary representation
         of a Student instance
         """
-        attrs = self.__dict__
+        attr = self.__dict__
         if (isinstance(attrs, str)):
-            return (json.dumps(attrs, sort_keys=True))
-        return (json.dumps(attrs))
+            for atr in attrs:
+                return (attr[atr])
+        return (attrs)
