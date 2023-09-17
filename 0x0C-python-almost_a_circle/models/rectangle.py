@@ -10,22 +10,22 @@ class Rectangle(Base):
 
         if (not isinstance(width, int)):
             raise TypeError("width must be an integer")
-        if (width <= 0):
+        elif (width <= 0):
             raise ValueError("width must be > 0")
         
         if (not isinstance(height, int)):
             raise TypeError("height must be an integer")
-        if (height <= 0):
+        elif (height <= 0):
             raise ValueError("height must be > 0")
 
         if (not isinstance(x, int)):
             raise TypeError("x must be an integer")
-        if (x < 0):
+        elif (x < 0):
             raise ValueError("x must be >= 0")
 
         if (not isinstance(y, int)):
             raise TypeError("y must be an integer")
-        if (y < 0):
+        elif (y < 0):
             raise ValueError("y must be >= 0")
 
         self.__width = width
@@ -34,27 +34,48 @@ class Rectangle(Base):
         self.__x = y
 
         super().__init__(id)
-
-    def set_width(self):
-        self.__width = width
-
-    def get_width(self):
+    
+    @property
+    def width(self):
         return (self.__width)
 
-    def set_height(self):
+    @width.setter
+    def width(self, width):
+        if (not isinstance(width, int)):
+            raise TypeError("width must be an integer")
+        elif (width <= 0):
+            raise ValueError("width must be > 0")
+        self.__width = width
+
+    @property
+    def height(self):
+        return (self.__height)
+    @height.setter
+    def height(self, height):
+        if (not isinstance(height, int)):
+            raise TypeError("height must be an integer")
+        elif (height <= 0):
+            raise ValueError("height must be > 0")
         self.__height = height
 
-    def get_height(self):
-        return (self.__height)
-
-    def set_x(self):
+    @property
+    def x(self):
+        return (self.__x)
+    @x.setter
+    def x(self, x):
+        if (not isinstance(x, int)):
+            raise TypeError("x must be an integer")
+        elif (x < 0):
+            raise ValueError("x must be >= 0")
         self.__x = x
 
-    def get_x(self):
-        return (self.__x)
-
-    def set_y(self):
-        self.__y = y
-
-    def get_y(self):
+    @property
+    def y(self):
         return (self.__y)
+    @y.setter
+    def y(self, y):
+        if (not isinstance(y, int)):
+            raise TypeError("y must be an integer")
+        elif (y < 0):
+            raise ValueError("y must be >= 0")
+        self.__y = y
