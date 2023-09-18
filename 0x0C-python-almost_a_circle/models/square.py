@@ -20,7 +20,7 @@ class Square(Rectangle):
     @property
     def size(self):
         """return the square size"""
-        return (self.width)
+        return (self.__width)
 
     @size.setter
     def size(self, value):
@@ -45,7 +45,7 @@ class Square(Rectangle):
     def to_dictionary(self):
         """ returns the dictionary representation of a Square"""
         s_dic = {'id': self.id,
-                 'x': self.__x,
-                 'size': self.__width,
-                 'y': self.__y}
+                 'x': self.x,
+                 'size': self.width,
+                 'y': self.y}
         return s_dic
