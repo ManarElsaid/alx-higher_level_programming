@@ -18,7 +18,7 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         elif (width <= 0):
             raise ValueError("width must be > 0")
-        
+
         if (not isinstance(height, int)):
             raise TypeError("height must be an integer")
         elif (height <= 0):
@@ -40,7 +40,7 @@ class Rectangle(Base):
         self.__y = y
 
         super().__init__(id)
-    
+
     @property
     def width(self):
         """get rectangle width"""
@@ -59,6 +59,7 @@ class Rectangle(Base):
     def height(self):
         """get rectangle height"""
         return (self.__height)
+
     @height.setter
     def height(self, height):
         """set rectangle height"""
@@ -72,6 +73,7 @@ class Rectangle(Base):
     def x(self):
         """get x value"""
         return (self.__x)
+
     @x.setter
     def x(self, x):
         """set x value"""
@@ -85,6 +87,7 @@ class Rectangle(Base):
     def y(self):
         """get y value"""
         return (self.__y)
+
     @y.setter
     def y(self, y):
         """set y value"""
@@ -98,10 +101,10 @@ class Rectangle(Base):
         """returns the area value of the Rectangle instance"""
         return (self.__width * self.__height)
 
-
     def __str__(self):
         """__str__ method so that returns rectangle data"""
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} \
+- {self.__width}/{self.__height}"
 
     def display(self):
         """prints in stdout the Rectangle
@@ -122,3 +125,7 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ returns the dictionary representation of a Rectangle"""
+        return (self.__dict__)
