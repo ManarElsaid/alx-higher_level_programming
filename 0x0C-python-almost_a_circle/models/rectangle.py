@@ -100,7 +100,7 @@ class Rectangle(Base):
 
 
     def __str__(self):
-        """__str__ method so that it returns rectangle data"""
+        """__str__ method so that returns rectangle data"""
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
     def display(self):
@@ -111,8 +111,14 @@ class Rectangle(Base):
         for j in range(self.__height):
             print((" " * self.__x) + ("#" * self.__width))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """a method that assigns an argument to each attribute"""
         attr = ["id", "width", "height", "x", "y"]
-        for i, arg in enumerate(args):
-           setattr(self, attr[i], arg)
+
+        if (args):
+            for i, arg in enumerate(args):
+                setattr(self, attr[i], arg)
+
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
