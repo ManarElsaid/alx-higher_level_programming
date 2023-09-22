@@ -25,6 +25,10 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def __str__(self):
+        """srt method that returns the square data"""
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
     def update(self, *args, **kwargs):
         """a method that assigns attributes"""
         attr = ["id", "size", "x", "y"]
@@ -46,7 +50,3 @@ class Square(Rectangle):
                  'size': self.width,
                  'y': self.y}
         return s_dic
-
-    def __str__(self):
-        """srt method that returns the square data"""
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
