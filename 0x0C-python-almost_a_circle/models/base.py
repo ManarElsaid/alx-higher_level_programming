@@ -42,3 +42,13 @@ class Base:
             else:
                 list_of_dictionary = [obj.to_dictionary() for obj in list_objs]
                 f.write(Base.to_json_string(list_of_dictionary))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """a method that returns an instance with all attributes already set"""
+        if cls.__name__ == "Rectangle":
+            dummy = cls(3, 5)
+        else:
+            dummy = cls(5)
+        dummy.update(**dictionary)
+        return dummy

@@ -13,9 +13,6 @@ class Square(Rectangle):
 
         super().__init__(size, size, x, y, id)
 
-    def __str__(self):
-        """srt method that returns the square data"""
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
     @property
     def size(self):
@@ -49,3 +46,7 @@ class Square(Rectangle):
                  'size': self.width,
                  'y': self.y}
         return s_dic
+
+    def __str__(self):
+        """srt method that returns the square data"""
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
