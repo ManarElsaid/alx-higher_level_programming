@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A module defines Base class"""
 import json
+import turtle
 
 
 class Base:
@@ -68,3 +69,24 @@ class Base:
             return obj_list
         except FileNotFoundError:
             return obj_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ that opens a window and draws all the Rectangles and Squares"""
+        zoze = turtle.Turtle()
+        zoze.color("red")
+        for rect in list_rectangles:
+            zoze.goto(rect.x, rect.y)
+            for i in range(2):
+                zoze.forward(rect.height)
+                zoze.left(90)
+                zoze.forward(rect.width)
+                zoze.left(90)
+
+        for square in list_squares:
+            zoze.goto(square.x, square.y)
+            for j in range(2):
+                zoze.forward(square.size)
+                zoze.left(90)
+                zoze.forward(square.size)
+                zoze.left(90)
