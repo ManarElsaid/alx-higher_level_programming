@@ -10,8 +10,9 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+
 class State(Base):
     """the State class that inherit from Base class"""
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True)
-    name =  Column(String(128), nullable=False)
+    name = Column(String(128), nullable=False)
